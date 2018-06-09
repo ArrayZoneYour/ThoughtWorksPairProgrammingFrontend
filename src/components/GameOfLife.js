@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from './Header';
 import GameBoard from './GameBoard';
 import Button from './Button';
 import axios from 'axios';
