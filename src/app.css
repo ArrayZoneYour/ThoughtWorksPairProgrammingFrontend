@@ -1,0 +1,12 @@
+.cell {
+    width: 5px;
+    height: 5px;
+}
+
+.board-cell-black {
+    background: #000000;
+}
+
+.board-cell-white {
+    background: #FFFFFF;
+}
