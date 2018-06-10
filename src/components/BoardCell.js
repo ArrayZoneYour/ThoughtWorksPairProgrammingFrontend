@@ -17,7 +17,7 @@ class BoardCell extends React.Component {
 
     render() {
         return (
-            <div className="float-left">
+            <div className="float-left" onClick={this.props.cellClick}>
                 {this.renderCell()}
             </div>
         );
