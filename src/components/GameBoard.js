@@ -4,9 +4,14 @@ import BoardCell from './BoardCell';
 class GameBoard extends React.Component {
 
     render_n_cells = (row_num, col_num) => {
-        let result = []
+        let result = [];
         for (let i = 0; i < col_num; i++) {
-            result.push(<BoardCell state={ this.props.board_status[parseInt(row_num)][i]} 
+            // console.log(row_num + ' ' + i);
+            result.push(<BoardCell key={ col_num * row_num + i }
+                                   row_num={row_num}
+                                   col_num={col_num}
+                                   i={i}
+                                   state={ this.props.board_status[parseInt(row_num)][i]} 
                                    cellClick={() => this.props.cellClick(parseInt(row_num), i)} />);
         }
         return result;
@@ -16,7 +21,7 @@ class GameBoard extends React.Component {
         let result = [];
         for (let i = 0; i < row_num; i++) {
             result.push(
-                <div className="row">
+                <div className="row" key={i}>
                     {this.render_n_cells(i, col_num)}
                 </div>
              );
@@ -32,4 +37,5 @@ class GameBoard extends React.Component {
         );
     }
 }
+
 export default GameBoard;
